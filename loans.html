@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Loans</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <link rel="icon" type="image/x-icon" href="image/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+
+    <div class="clearfix">
+        <div id="icons" class="float-left; d-inline-block">
+            <a href="index.html"><img class="img-fluid ml-2 mt-2" src="image/icon-link.png">
+            </a>
+        </div>
+        <div class="col float-right pt-2 d-none d-lg-inline-block pr-2" style="width:300px; height:50px;">
+            <img class="l1" width="30px" height="30px" src="https://cdn4.iconfinder.com/data/icons/free-colorful-icons/360/gmail.png" alt="">
+            <img class="l1" width="30px" height="30px" src="data:image/png;base64,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"
+                alt="">
+            <img class="l1" width="30px" height="30px" src="http://www.logospng.com/images/6/18-hotmail-icon-for-desktop-images-windows-live-6171.png" alt="">
+            <img class="l1" width="30px" height="30px" src="https://is5-ssl.mzstatic.com/image/thumb/Purple111/v4/e7/c4/fb/e7c4fb1a-e459-1b86-72dc-bcc41f442c7d/icon.png/1200x630bb.png" alt="">
+            <img class="l1" width="30px" height="30px" src="https://cdn4.iconfinder.com/data/icons/social-media-pro-icons/1080/Whatsapp-01-512.png" alt="">
+            <img class="l1" width="30px" height="30px" src="https://www.powderalliance.com/wp-content/uploads/bootstrap-logo.jpg" alt="">
+            <img class="l1" width="30px" height="30px" src="https://cdn4.iconfinder.com/data/icons/social-media-icons-the-circle-set/48/facebook_circle-512.png" alt="">
+        </div>
+    </div>
+
+    <nav id="main-nav" class="py-1 mt-3 navbar navbar-expand-md navbar-dark bg-info sticky-top">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                          </button>
+
+        <div class="collapse navbar-collapse" style="width:100%;" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="product.html">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="beauity_parlour.html">Beauty Parlour</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="loans.html">Loans
+                                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                               Options
+                              </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Details</a>
+                        <a class="dropdown-item" href="#">Edit</a>
+                        <a class="dropdown-item" href="#">Contact</a>
+                        <a class="dropdown-item" href="#">Add Details</a>
+                        <a class="dropdown-item" href="#">Show All</a>
+                        <a class="dropdown-item" href="#">Customize</a>
+                        <a class="dropdown-item" href="#">Get Access</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="live_training.html">Live Training</a>
+                </li>
+            </ul>
+
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <section class="container-fluid">
+
+        <div class="row p-0 m-0">
+            <div class="col-lg-7 px-3">
+                <div class="">
+                    <form class="shadow p-3 px-5 rounded my-3 mx-auto" style="background-color:#186697; color:white; width: 80%;">
+                        <h4 class="mx-auto">Loans Request Form</h4>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4">Product ID</label>
+                                <input type="number" class="form-control" id="inputEmail4" placeholder="#@12343">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputPassword4">Quantity</label>
+                                <input type="number" class="form-control" id="inputPassword4" placeholder="12344">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress">Total</label>
+                            <input type="number" class="form-control" id="inputAddress" placeholder="$1234">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress2">Loan Taker ID</label>
+                            <input type="text" maxlength="13" class="form-control" id="inputAddress2" placeholder="Loan Holder Name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputAddress2">Shop No:</label>
+                            <input type="number" class="form-control" id="inputAddress2" placeholder="Shop No">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputAddress2">Phone</label>
+                            <input type="number" maxlength="11" class="form-control" id="inputAddress2" placeholder="Customer Phone">
+                        </div>
+
+                        <div class="form-row">
+
+                            <div class="form-group col-md-4">
+                                <label for="inputState">Category</label>
+                                <select id="inputState" class="form-control">
+                                              <option selected>Select Category</option>
+                                              <option>Mobile</option>
+                                              <option>Shampoo</option>
+                                              <option>Soop</option>
+                                              <option>General</option>
+                                              <option>Makeup</option>
+                                              <option>Toys</option>
+                                            </select>
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck">
+                                <label class="form-check-label" for="gridCheck">
+                                             Are you sure
+                                            </label>
+                            </div>
+                        </div>
+                        <button id="sss" disabled type="submit" class="btn btn-outline-light">Save</button>
+                        <button id="sss" disabled type="submit" class="ml-1 btn btn-outline-light">Generate</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-5  w-100">
+
+                <form id="ba" class="shadow border border-dark bg-white py-5 m-5 mt-1 mx-auto d-flex flex-column justify-content" style="border-radius:5px; width: 370px;">
+
+                    <img style="margin:5px auto;" width="180" height="150" src="http://www.bluemed-initiative.eu/wp-content/uploads/2016/12/Logo-5.png" alt="">
+                    <div class="form-group ">
+                        <input type="email " class="w-75 mx-auto form-control " id="exampleInputEmail1 " aria-describedby="emailHelp " placeholder="Enter email ">
+                    </div>
+
+                    <div class="form-group">
+                        <select class="form-control w-75 mx-auto" id="exampleFormControlSelect2">
+                                      <option>Administer</option>
+                                      <option>Employee</option>
+                                    </select>
+                    </div>
+
+                    <div class="form-group ">
+                        <input type="password " class="w-75 mx-auto form-control " id="exampleInputPassword1 " placeholder="Password ">
+                    </div>
+
+                    <button style="width:75%;" type="submit" class="btn btn-primary mx-auto w-25">Submit</button>
+                </form>
+
+            </div>
+        </div>
+
+    </section>
+
+
+</body>
+
+</html>

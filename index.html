@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OOSE Project</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <link rel="icon" type="image/x-icon" href="image/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <div class="clearfix">
+        <div id="icons" class="float-left; d-inline-block">
+            <a href="index.html"><img class="img-fluid ml-2 mt-2" src="image/icon-link.png">
+            </a>
+        </div>
+
+        <div class="col float-right pt-2 d-none d-lg-inline-block pr-2" style="width:300px; height:50px;">
+            <img class="l1" width="30px" height="30px" src="https://cdn4.iconfinder.com/data/icons/free-colorful-icons/360/gmail.png" alt="">
+            <img class="l1" width="30px" height="30px" src="data:image/png;base64,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"
+                alt="">
+            <img class="l1" width="30px" height="30px" src="http://www.logospng.com/images/6/18-hotmail-icon-for-desktop-images-windows-live-6171.png" alt="">
+            <img class="l1" width="30px" height="30px" src="https://is5-ssl.mzstatic.com/image/thumb/Purple111/v4/e7/c4/fb/e7c4fb1a-e459-1b86-72dc-bcc41f442c7d/icon.png/1200x630bb.png" alt="">
+            <img class="l1" width="30px" height="30px" src="https://cdn4.iconfinder.com/data/icons/social-media-pro-icons/1080/Whatsapp-01-512.png" alt="">
+            <img class="l1" width="30px" height="30px" src="https://www.powderalliance.com/wp-content/uploads/bootstrap-logo.jpg" alt="">
+            <img class="l1" width="30px" height="30px" src="https://cdn4.iconfinder.com/data/icons/social-media-icons-the-circle-set/48/facebook_circle-512.png" alt="">
+        </div>
+        <div class="wrapper my-1 float-right d-none d-lg-inline-block">
+            <marquee behavior="alternate"><span style="font-size:20px;" class="marquee display-5 text-danger">Welcome To CMS</span></marquee>
+        </div>
+
+    </div>
+
+    <nav id="main-nav" class="py-1 mt-3 navbar navbar-expand-md navbar-dark bg-info sticky-top">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+        <div class="collapse navbar-collapse" style="width:100%;" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="product.html">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="beauity_parlour.html">Beauty Parlour</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="loans.html">Loans
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               Options
+              </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Details</a>
+                        <a class="dropdown-item" href="#">Edit</a>
+                        <a class="dropdown-item" href="#">Contact</a>
+                        <a class="dropdown-item" href="#">Add Details</a>
+                        <a class="dropdown-item" href="#">Show All</a>
+                        <a class="dropdown-item" href="#">Customize</a>
+                        <a class="dropdown-item" href="#">Get Access</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="live_training.html">Live Training</a>
+                </li>
+            </ul>
+
+            <div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="signup.html">
+                            <i class="fas fa-user-plus">  </i> Sign Up</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="signup.html">
+                            <i class="mr-1 fas fa-sign-in-alt"> </i> Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <section id="scroll-images" class="container-fluid px-0">
+        <img src="image/c2.jpg" class="img-fluid" alt="">
+    </section>
+
+
+    <section id="top-employee" class="container-fluid my-lg-5 my-4">
+
+        <div class="row">
+            <div class="col-lg-7 col-md-12 col-sm-12">
+                <div class="container">
+                    <div class="row mt-2">
+                        <div class="col-lg-6">
+                            <div class="shadow card" style="width: 18rem;">
+                                <img src="https://media.allure.com/photos/5b9a095a9089f95078753b08/16:9/w_1280,c_limit/BOB-2018-hub-flatlay-seal.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="shadow card" style="width: 18rem;">
+                                <img src="https://media.allure.com/photos/5b9a095a9089f95078753b08/16:9/w_1280,c_limit/BOB-2018-hub-flatlay-seal.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row mt-3">
+                        <div class="col-lg-6">
+                            <div class="shadow card" style="width: 18rem;">
+                                <img src="https://media.allure.com/photos/5b9a095a9089f95078753b08/16:9/w_1280,c_limit/BOB-2018-hub-flatlay-seal.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="shadow card" style="width: 18rem;">
+                                <img src="https://media.allure.com/photos/5b9a095a9089f95078753b08/16:9/w_1280,c_limit/BOB-2018-hub-flatlay-seal.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="px-0 col-lg-5 d-md-none d-sm-none d-xm-none d-lg-block">
+
+                <div id="ro" class="rounded-left float-right d-flex flex-row">
+                    <img class="rounded-left d-inline-block" src="https://www.franchiseindia.com/uploads/news/wi/5a39e3692c1c2.jpg" width="130" height="130" alt="">
+                    <div>
+                        <h4 class="pt-2 pl-2" style="background-color:#a0bfb5; display:inline-block;">Best Beauty product Details</h4>
+                        <p style="background-color:#a0bfb5; margin-bottom:0; text-align:justify;" class="px-2">The is best which contains which can not damage your face that contains best chemical for you face to be white must try to use this product
+                        </p>
+                    </div>
+                </div>
+
+                <div id="ro" class="rounded-left float-right d-flex flex-row">
+                    <img class="rounded-left d-inline-block" src="https://www.franchiseindia.com/uploads/news/wi/5a39e3692c1c2.jpg" width="130" height="130" alt="">
+                    <div>
+                        <h4 class="pt-2 pl-2" style="background-color:#a0bfb5; display:inline-block;">Best Beauty product Details</h4>
+                        <p style="background-color:#a0bfb5; margin-bottom:0; text-align:justify;" class="px-2">The is best which contains which can not damage your face that contains best chemical for you face to be white must try to use this product
+                        </p>
+                    </div>
+                </div>
+
+                <div id="ro" class="rounded-left float-right d-flex flex-row">
+                    <img class="rounded-left d-inline-block" src="https://www.franchiseindia.com/uploads/news/wi/5a39e3692c1c2.jpg" width="130" height="130" alt="">
+                    <div>
+                        <h4 class="pt-2 pl-2" style="background-color:#a0bfb5; display:inline-block;">Best Beauty product Details</h4>
+                        <p style="background-color:#a0bfb5; margin-bottom:0; text-align:justify;" class="px-2">The is best which contains which can not damage your face that contains best chemical for you face to be white must try to use this product
+                        </p>
+                    </div>
+                </div>
+
+                <div id="ro" class="rounded-left float-right d-flex flex-row">
+                    <img class="rounded-left d-inline-block" src="https://www.franchiseindia.com/uploads/news/wi/5a39e3692c1c2.jpg" width="130" height="130" alt="">
+                    <div>
+                        <h4 class="pt-2 pl-2" style="background-color:#a0bfb5; display:inline-block;">Best Beauty product Details</h4>
+                        <p style="background-color:#a0bfb5; margin-bottom:0; text-align:justify;" class="px-2">The is best which contains which can not damage your face that contains best chemical for you face to be white must try to use this product
+                        </p>
+                    </div>
+                </div>
+
+                <div id="ro" class="rounded-left float-right d-flex flex-row">
+                    <img class="rounded-left d-inline-block" src="https://www.franchiseindia.com/uploads/news/wi/5a39e3692c1c2.jpg" width="130" height="130" alt="">
+                    <div>
+                        <h4 class="pt-2 pl-2" style="background-color:#a0bfb5; display:inline-block;">Best Beauty product Details</h4>
+                        <p style="background-color:#a0bfb5; margin-bottom:0; text-align:justify;" class="px-2">The is best which contains which can not damage your face that contains best chemical for you face to be white must try to use this product
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+        </div>
+    </section>
+
+    <section id="generate_bill" class="container">
+
+        <div class="row">
+            <div class="col-6 w-100">
+
+                <form class="shadow-sm p-3 bg-info rounded">
+                    <h4 class="mx-auto">Generate bill here</h4>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Product ID</label>
+                            <input type="number" class="form-control" id="inputEmail4" placeholder="#@12343">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Quantity</label>
+                            <input type="number" class="form-control" id="inputPassword4" placeholder="12344">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAddress">Total</label>
+                        <input type="number" class="form-control" id="inputAddress" placeholder="$1234">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAddress2">Customer</label>
+                        <input type="text" class="form-control" id="inputAddress2" placeholder="Customer general details">
+                    </div>
+                    <div class="form-row">
+
+                        <div class="form-group col-md-4">
+                            <label for="inputState">Category</label>
+                            <select id="inputState" class="form-control">
+                                  <option selected>Select Category</option>
+                                  <option>Mobile</option>
+                                  <option>Shampoo</option>
+                                  <option>Soop</option>
+                                  <option>General</option>
+                                  <option>Makeup</option>
+                                  <option>Toys</option>
+                                </select>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">
+                                 Are you sure
+                                </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-outline-light">Generate</button>
+                </form>
+
+            </div>
+
+            <div class="col-6 w-100">
+
+                <form class="shadow p-3 px-5 rounded" style="background-color:#186697; color:white;">
+                    <h4 class="mx-auto">Online Order Transfer</h4>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Product ID</label>
+                            <input type="number" class="form-control" id="inputEmail4" placeholder="#@12343">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Quantity</label>
+                            <input type="number" class="form-control" id="inputPassword4" placeholder="12344">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAddress">Total</label>
+                        <input type="number" class="form-control" id="inputAddress" placeholder="$1234">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAddress2">Customer ID</label>
+                        <input type="number" maxlength="13" class="form-control" id="inputAddress2" placeholder="Customer ID">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputAddress2">Address</label>
+                        <input type="text" class="form-control" id="inputAddress2" placeholder="Customer Address">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputAddress2">Phone</label>
+                        <input type="number" maxlength="11" class="form-control" id="inputAddress2" placeholder="Customer Phone">
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group col-md-4">
+                            <label for="inputState">Category</label>
+                            <select id="inputState" class="form-control">
+                                      <option selected>Select Category</option>
+                                      <option>Mobile</option>
+                                      <option>Shampoo</option>
+                                      <option>Soop</option>
+                                      <option>General</option>
+                                      <option>Makeup</option>
+                                      <option>Toys</option>
+                                    </select>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">
+                                     Are you sure
+                                    </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-outline-light">Generate</button>
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="top-employee" class="mt-5 w-100 py-5" style="background-color: #5fbde1;">
+
+        <div class="container">
+            <h4 class="mx-auto text-center mb-3">Top Trading Product Category</h4>
+            <div id="carouselExampleIndicators" pause="hover" data-interval="2000" class="carousel slide" data-ride="carousel">
+
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="px-2 text-center" style="margin:0 auto; width: 500px;">
+                            <img width="180" height="180" class="rounded-circle" src="https://adn-static3.nykaa.com/media/catalog/product/tr:w-344,h-344,cm-pad_resize/1/2/12840_s1.jpg" alt="">
+                            <h3>Fair Lovely Cream</h3>
+                            <p>
+                                Fair & Lovely is a skin-lightening cosmetic product of Hindustan Unilever introduced to the market in India in 1975.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="px-2 text-center" style="margin:0 auto; width: 500px;">
+                            <img width="180" height="180" class="rounded-circle" src="https://peopledotcom.files.wordpress.com/2018/04/shampoos.jpg" alt="">
+                            <h3>Top Sampoos</h3>
+                            <p>
+                                Shampoo (/ʃæmˈpuː/) is a hair care product, typically in the form of a viscous liquid, that is used for cleaning hair. Less commonly.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="px-2 text-center" style="margin:0 auto; width: 500px;">
+                            <img width="180" height="180" class="rounded-circle" src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1555609858-nyx-matte-finish-makeup-setting-sprays-1555609825.jpg?crop=1xw:1xh;center,top&resize=480:*" alt="">
+                            <h3>Makeup Cream</h3>
+                            <p> Makeup product is a skin-lightening cosmetic product of Hindustan Unilever introduced to the market in India in 1975.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="administer" class="container my-5 w-100" ">
+
+            <div class="jumbotron py-3 ">
+                    <img class="rounded " width="200 " height="200 " src="https://www.jcrew.com/s7-img-facade/K8348_WX3530_m?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&wid=408&hei=408 " alt=" ">
+                    <h1 class="display-5 d-inline-block pl-4 ">Administer Messages</h1>
+                    <p class="lead ">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                    <hr class="my-4 ">
+                    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                    <a class="btn btn-primary btn-lg " href="# " role="button ">Learn more</a>
+                  </div>  
+
+    </section>
+
+    <footer style="background-color: #186697 ; " class="w-100 mt-5 pt-4 pb-5 sticky-bottom ">
+     <div class="container d-flex flex row justify-content-around " style="color:white; ">
+      <table cellspacing="10px ">
+          <tr>
+              <td><img width="30 " height="30 " src="https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjYjdn5xenhAhUtyYUKHclxA3sQjRx6BAgBEAU&url=https%3A%2F%2Fza.fotolia.com%2Fid%2F126248491&psig=AOvVaw0Bx1duGt5r6-LHEKPR0_jb&ust=1556223350184859
+        " alt=" "></td>
+              <td>Phone: </td>
+              <td>0911-811711</td>
+          </tr>
+          <tr>
+                <td><img width="30 " height="30 " src="https://images.vexels.com/media/users/3/157467/isolated/preview/8c753183496fe26b05af6d9b31debb85-mobile-phone-with-antenna-icon-by-vexels.png " alt=" "></td>
+                <td>Mobile: </td>
+                <td>03059235079</td>
+            </tr>
+            <tr>
+                    <td><img width="30 " height="30 " src="https://cdn3.iconfinder.com/data/icons/line/36/email_send-512.png " alt=" "></td>
+                    <td>Email: </td>
+                    <td>smartlogic@gmail.com</td>
+                </tr>
+
+                <tr>
+                        <td><img width="30 " height="30 " src="https://cdn.iconscout.com/icon/free/png-256/home-house-main-page-building-address-casa-1-2683.png " alt=" "></td>
+                        <td>Address: </td>
+                        <td>Peshawar near to CUSIT</td>
+                    </tr>
+      </table>
+
+      <ul>
+          <strong>Help</strong>
+          <li>CUstomer</li>
+          <li>Employee</li>
+          <li>Administer</li>
+          <li>Gernal</li>
+      </ul>
+
+      <ul>
+          Services
+          <li>Online selling</li>
+          <li>Customer Support</li>
+          <li>Order Product</li>
+          <li>Home delivery</li>
+          <li>24/7 Open</li>
+      </ul>
+    </div>
+     
+     <div class="container text-center "></div>
+     <p style="font-size:13px; color:white; " class="text-center w-50 mx-auto mt-3 ">
+            Oriflame is a leading beauty company selling direct. We are present in more than 60 countries, of which we are the market leader in more than a half. Oriflame has its origin in Sweden with corporate offices in Switzerland. We offer a wide range of high-quality beauty products as well as a unique opportunity to join our sales force and start your own business. 
+     </p>
+    </footer>
+
+</body>
+
+</html>
